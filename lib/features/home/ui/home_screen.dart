@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/cart/ui/cart_screen.dart';
 import 'package:flutter_bloc_practice_akshit/features/home/bloc/home_bloc.dart';
+import 'package:flutter_bloc_practice_akshit/features/home/ui/product_tile.dart';
 import 'package:flutter_bloc_practice_akshit/features/wishlist/ui/wishlist_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           case HomeLoadingState:
             return Scaffold(body: Center(child: CircularProgressIndicator()));
           case HomeLoadedSuccessState:
+            final successState = state as HomeLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
                 title: Text('Grocery App'),
@@ -65,7 +67,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              body: Column(),
+              body: ListView.builder(
+                itemBuilder: (context, index) {
+                  return ProductTile(
+                    productDataModel: successState.products[index],
+                  );
+                },
+                itemCount: successState.products.length,
+              ),
             );
           case HomeErrorState:
             return Scaffold(body: Center(child: Text('Error')));
