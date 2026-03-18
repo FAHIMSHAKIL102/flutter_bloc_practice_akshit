@@ -8,7 +8,8 @@ class ProductTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
+      decoration: BoxDecoration(border: Border.all(color: Colors.grey,),
+      borderRadius: BorderRadius.circular(10)),
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.all(10),
       child: Column(
