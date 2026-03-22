@@ -19,7 +19,9 @@ class _CartScreenState extends State<CartScreen> {
         bloc: cartBloc,
         listener: (context, state) {},
         builder: (context, state) {
-          return Container(child: Listview.builder());
+          return Container(child: ListView.builder(itemBuilder: (context,index){
+            return Container();
+          }));
         },
       ),
     );
