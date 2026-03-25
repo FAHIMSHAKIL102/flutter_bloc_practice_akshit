@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc_practice_akshit/data/cart_items.dart';
 import 'package:flutter_bloc_practice_akshit/features/home/models/product_data_moodel.dart';
 import 'package:meta/meta.dart';
 
@@ -12,5 +13,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<CartInitialEvent>(cartInitialEvent);
   }
 
-  FutureOr<void> cartInitialEvent(CartInitialEvent event, Emitter<CartState> emit) {}
+  FutureOr<void> cartInitialEvent(CartInitialEvent event, Emitter<CartState> emit) {
+    emit(CartSuccessState(cartItems: cartItems));
+  }
 }
