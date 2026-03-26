@@ -12,16 +12,28 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   final CartBloc cartBloc = CartBloc();
   @override
+  void initState() {
+    cartBloc.add(CartInitialEvent());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Cart Screen')),
       body: BlocConsumer<CartBloc, CartState>(
         bloc: cartBloc,
         listener: (context, state) {},
+        listenWhen: (previous, current) => current is CartActionState,
+        buildWhen: (previous, current) => current is! CartActionState,
         builder: (context, state) {
-          return Container(child: ListView.builder(itemBuilder: (context,index){
-            return Container();
-          }));
+          return Container(
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return Container();
+              },
+            ),
+          );
         },
       ),
     );
