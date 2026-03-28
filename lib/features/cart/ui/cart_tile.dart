@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_practice_akshit/features/cart/bloc/cart_bloc.dart';
-import 'package:flutter_bloc_practice_akshit/features/home/bloc/home_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/home/models/product_data_moodel.dart';
 
 class CartTile extends StatelessWidget {

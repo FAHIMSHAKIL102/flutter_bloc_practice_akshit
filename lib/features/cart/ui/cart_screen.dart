@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/cart/bloc/cart_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/cart/ui/cart_tile.dart';
-import 'package:flutter_bloc_practice_akshit/features/home/ui/product_tile.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
