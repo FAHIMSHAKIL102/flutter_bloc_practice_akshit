@@ -59,19 +59,28 @@ class _HomeScreenState extends State<HomeScreen> {
             final successState = state as HomeLoadedSuccessState;
             return Scaffold(
               appBar: AppBar(
-                title: Text('Grocery App'),
+                title: Text(
+                  'Grocery App',
+                  style: TextStyle(color: Colors.white),
+                ),
                 actions: [
                   IconButton(
                     onPressed: () {
                       homeBloc.add(HomeWishlistButtonNavigateEvent());
                     },
-                    icon: Icon(Icons.favorite_border_outlined),
+                    icon: Icon(
+                      Icons.favorite_border_outlined,
+                      color: Colors.white,
+                    ),
                   ),
                   IconButton(
                     onPressed: () {
                       homeBloc.add(HomeCartButtonNavigateEvent());
                     },
-                    icon: Icon(Icons.shopping_bag_outlined),
+                    icon: Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),

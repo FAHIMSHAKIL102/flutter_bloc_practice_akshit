@@ -40,14 +40,9 @@ class _CartScreenState extends State<CartScreen> {
                 },
                 itemCount: successState.cartItems.length,
               );
+            default:
+              return Container();
           }
-          return Container(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return Container();
-              },
-            ),
-          );
         },
       ),
     );

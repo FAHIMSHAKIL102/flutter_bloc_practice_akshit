@@ -42,7 +42,7 @@ class CartTile extends StatelessWidget {
             mainAxisAlignment: .spaceBetween,
             children: [
               Text(
-                "\$" + productDataModel.price.toString(),
+                "\$${productDataModel.price}",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Row(
@@ -57,11 +57,11 @@ class CartTile extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {
-                      // homeBloc.add(HomeProductCartButtonClikedEvent(
-                      //   clickedProduct: productDataModel
-                      // ));
+                      cartBloc.add(
+                        CartRemoveItemEvent(productDataModel: productDataModel),
+                      );
                     },
-                    icon: Icon(Icons.shopping_bag_outlined),
+                    icon: Icon(Icons.shopping_bag),
                   ),
                 ],
               ),

@@ -42,24 +42,28 @@ class ProductTile extends StatelessWidget {
             mainAxisAlignment: .spaceBetween,
             children: [
               Text(
-                "\$" + productDataModel.price.toString(),
+                "\$${productDataModel.price}",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               Row(
                 children: [
                   IconButton(
                     onPressed: () {
-                      homeBloc.add(HomeProductWishlistButtonClikedEvent(
-                        clickedProduct: productDataModel
-                      ));
+                      homeBloc.add(
+                        HomeProductWishlistButtonClikedEvent(
+                          clickedProduct: productDataModel,
+                        ),
+                      );
                     },
                     icon: Icon(Icons.favorite_border_outlined),
                   ),
                   IconButton(
                     onPressed: () {
-                      homeBloc.add(HomeProductCartButtonClikedEvent(
-                        clickedProduct: productDataModel
-                      ));
+                      homeBloc.add(
+                        HomeProductCartButtonClikedEvent(
+                          clickedProduct: productDataModel,
+                        ),
+                      );
                     },
                     icon: Icon(Icons.shopping_bag_outlined),
                   ),
