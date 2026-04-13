@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_practice_akshit/features/home/models/product_data_moodel.dart';
 import 'package:flutter_bloc_practice_akshit/features/wishlist/bloc/wishlist_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/wishlist/ui/wishlist_tile.dart';
 
