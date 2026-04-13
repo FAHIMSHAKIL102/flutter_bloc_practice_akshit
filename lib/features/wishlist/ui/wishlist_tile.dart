@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_practice_akshit/features/cart/bloc/cart_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/home/models/product_data_moodel.dart';
+import 'package:flutter_bloc_practice_akshit/features/wishlist/bloc/wishlist_bloc.dart';
 
-class CartTile extends StatelessWidget {
+class WishlistTile extends StatelessWidget {
   final ProductDataModel productDataModel;
-  final CartBloc cartBloc;
-  const CartTile({
+  final WishlistBloc wishlistBloc;
+  const WishlistTile({
     super.key,
     required this.productDataModel,
-    required this.cartBloc,
+    required this.wishlistBloc,
   });
 
   @override
@@ -48,16 +48,18 @@ class CartTile extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.favorite_border_outlined),
-                  ),
-                  IconButton(
                     onPressed: () {
-                      cartBloc.add(
-                        CartRemoveItemEvent(productDataModel: productDataModel),
+                      wishlistBloc.add(
+                        WishlistRemoveItemEvent(
+                          productDataModel: productDataModel,
+                        ),
                       );
                     },
-                    icon: Icon(Icons.shopping_bag),
+                    icon: Icon(Icons.favorite, color: Colors.pinkAccent),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.shopping_bag_outlined),
                   ),
                 ],
               ),
@@ -66,5 +68,6 @@ class CartTile extends StatelessWidget {
         ],
       ),
     );
+    ;
   }
 }
