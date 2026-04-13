@@ -68,6 +68,5 @@ class WishlistTile extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }
