@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/cart/ui/cart_screen.dart';
+import 'package:flutter_bloc_practice_akshit/features/counter/ui/counter.dart';
 import 'package:flutter_bloc_practice_akshit/features/home/bloc/home_bloc.dart';
 import 'package:flutter_bloc_practice_akshit/features/home/ui/product_tile.dart';
 import 'package:flutter_bloc_practice_akshit/features/wishlist/ui/wishlist_screen.dart';
@@ -81,6 +82,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       Icons.shopping_bag_outlined,
                       color: Colors.white,
                     ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Counter()),
+                      );
+                    },
+                    icon: Icon(Icons.more_vert_outlined, color: Colors.white),
                   ),
                 ],
               ),
