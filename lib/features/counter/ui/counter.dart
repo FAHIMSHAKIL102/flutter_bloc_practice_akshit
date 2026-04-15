@@ -12,7 +12,12 @@ class _CounterState extends State<Counter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Counter')),
-      body: Column(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: .center,
+          children: [Text('0', style: TextStyle(fontSize: 50))],
+        ),
+      ),
     );
   }
 }
