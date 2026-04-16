@@ -4,3 +4,9 @@ part of 'counter_bloc.dart';
 sealed class CounterState {}
 
 final class CounterInitial extends CounterState {}
+
+final class CounterIncrementState extends CounterState {
+  final int value;
+
+  CounterIncrementState({required this.value});
+}
