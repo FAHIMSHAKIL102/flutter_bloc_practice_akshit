@@ -15,7 +15,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     CounterIncrementEvent event,
     Emitter<CounterState> emit,
   ) {
-   value++;
+    value++;
     emit(CounterIncrementState(value: value));
   }
 }
