@@ -33,6 +33,6 @@ class CounterlistenBloc extends Bloc<CounterlistenEvent, CounterlistenState> {
     CounterListenNavigationConsumerEvent event,
     Emitter<CounterlistenState> emit,
   ) {
-    emit(CounterlistenIncrementActionState());
+    emit(CounterlistenNavigationActionState());
   }
 }

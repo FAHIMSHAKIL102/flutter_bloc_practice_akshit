@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_practice_akshit/features/counterconsumer/ui/counterconsumer.dart';
 import 'package:flutter_bloc_practice_akshit/features/counterlisten/bloc/counterlisten_bloc.dart';
 
 class Counterlisten extends StatefulWidget {
@@ -16,7 +17,17 @@ class _CounterlistenState extends State<Counterlisten> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Counter Listen')),
+      appBar: AppBar(
+        title: Text('Counter Listen'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              counterlistenBloc.add(CounterListenNavigationConsumerEvent());
+            },
+            icon: Icon(Icons.arrow_circle_right_outlined),
+          ),
+        ],
+      ),
       body: BlocListener<CounterlistenBloc, CounterlistenState>(
         bloc: counterlistenBloc,
         listener: (context, state) {
@@ -28,8 +39,11 @@ class _CounterlistenState extends State<Counterlisten> {
             setState(() {
               value++;
             });
-          }else if (state is CounterlistenNavigationActionState){
-            
+          } else if (state is CounterlistenNavigationActionState) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Counterconsumer()),
+            );
           }
         },
         child: Center(
